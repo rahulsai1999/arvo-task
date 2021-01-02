@@ -10,23 +10,42 @@ const Intro = (props) => {
   const dispatch = useDispatch();
 
   return (
-    <>
-      <input
-        type="text"
-        value={player1}
-        onChange={(e) => {
-          dispatch(setPlayer1(e.target.value));
-        }}
-      />
-      <input
-        type="text"
-        value={player2}
-        onChange={(e) => {
-          dispatch(setPlayer2(e.target.value));
-        }}
-      />
-      <button onClick={() => dispatch(goToGame())}>Continue</button>
-    </>
+    <div className="container">
+      <div className="row">
+        <div class="input-field col s12">
+          <input
+            id="player1"
+            type="text"
+            className="validate"
+            value={player1}
+            onChange={(e) => {
+              dispatch(setPlayer1(e.target.value));
+            }}
+          />
+          <label for="player1">Player 1</label>
+        </div>
+      </div>
+      <div className="row">
+        <div class="input-field col s12">
+          <input
+            id="player2"
+            type="text"
+            className="validate"
+            value={player2}
+            onChange={(e) => {
+              dispatch(setPlayer2(e.target.value));
+            }}
+          />
+          <label for="player2">Player 2</label>
+        </div>
+      </div>
+      <button
+        className="waves-effect waves-light btn-large"
+        onClick={() => dispatch(goToGame())}
+      >
+        <i class="material-icons right">arrow_forward</i>Continue
+      </button>
+    </div>
   );
 };
 

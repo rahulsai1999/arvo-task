@@ -44,5 +44,7 @@ export const {
 
 export const selectScore1 = (state) => state.game.score1;
 export const selectScore2 = (state) => state.game.score2;
+export const selectDifference = (state) =>
+  Math.abs(state.game.score1 - state.game.score2);
 
 export default gameSlice.reducer;

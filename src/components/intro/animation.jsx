@@ -1,6 +1,6 @@
 import React from "react";
 import Lottie from "react-lottie";
-import * as animationData from "../../../public/ping-pong.json";
+import animationData from "./ping-pong.json";
 
 const LottieControl = () => {
   const defaultOptions = {
@@ -14,13 +14,7 @@ const LottieControl = () => {
 
   return (
     <div>
-      <Lottie
-        options={defaultOptions}
-        height={400}
-        width={400}
-        isStopped={this.state.isStopped}
-        isPaused={this.state.isPaused}
-      />
+      <Lottie options={defaultOptions} height={300} width={300} />
     </div>
   );
 };

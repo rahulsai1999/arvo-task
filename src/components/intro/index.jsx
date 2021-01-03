@@ -40,7 +40,11 @@ const Intro = (props) => {
         </div>
       </div>
       <button
-        className="waves-effect waves-light btn-large"
+        className={
+          player1.length !== 0 && player2.length !== 0
+            ? "waves-effect waves-light btn-large"
+            : "btn-large disabled"
+        }
         onClick={() => dispatch(goToGame())}
       >
         <i class="material-icons right">arrow_forward</i>Continue

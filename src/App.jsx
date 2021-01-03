@@ -2,6 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { selectGame } from "./components/intro/introSlice";
 
+import Animation from "./components/intro/animation";
+
 import Intro from "./components/intro";
 import Game from "./components/game";
 
@@ -11,7 +13,9 @@ const App = () => {
   const game = useSelector(selectGame);
   return (
     <div className="App">
-      <header className="App-header">Ping-Pong</header>
+      <div className="row">
+        <Animation />
+      </div>
       {!game ? <Intro /> : <Game />}
     </div>
   );

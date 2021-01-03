@@ -8,8 +8,6 @@ import { selectScore1, selectScore2 } from "./gameSlice";
 import { selectDifference } from "./gameSlice";
 // import { resetScores } from "./gameSlice";
 
-import styles from "./game.module.css";
-
 const Game = (props) => {
   const score1 = useSelector(selectScore1);
   const score2 = useSelector(selectScore2);
@@ -26,42 +24,77 @@ const Game = (props) => {
   };
 
   return (
-    <div>
-      <span className={styles.value}>{score1}</span>
-      <span className={styles.value}>{score2}</span>
-      <span className={styles.value}>{difference}</span>
-      <span className={styles.value}>{returnWinner(score1, score2)}</span>
-      <div className={styles.row}>
-        <button
-          className={styles.button}
-          aria-label="Increment score 1"
-          onClick={() => dispatch(incrementScore1())}
-        >
-          +
-        </button>
-        <button
-          className={styles.button}
-          aria-label="Decrement score 2"
-          onClick={() => dispatch(decrementScore1())}
-        >
-          -
-        </button>
+    <div className="container" style={{ marginTop: "3%", padding: "3%" }}>
+      <div className="row">
+        <div className="col s6">
+          <span style={{ fontSize: 20 }}>{player1}</span>
+        </div>
+        <div className="col s3">
+          <button
+            className="btn-floating btn-large waves-effect waves-light green"
+            aria-label="Increment score 1"
+            onClick={() => dispatch(incrementScore1())}
+          >
+            <i className="large material-icons">add</i>
+          </button>
+        </div>
+        <div className="col s3">
+          <button
+            className="btn-floating btn-large waves-effect waves-light red"
+            aria-label="Decrement score 1"
+            onClick={() => dispatch(decrementScore1())}
+          >
+            <i className="large material-icons">remove</i>
+          </button>
+        </div>
       </div>
-      <div className={styles.row}>
-        <button
-          className={styles.button}
-          aria-label="Increment score 2"
-          onClick={() => dispatch(incrementScore2())}
-        >
-          +
-        </button>
-        <button
-          className={styles.button}
-          aria-label="Decrement score 2"
-          onClick={() => dispatch(decrementScore2())}
-        >
-          -
-        </button>
+      <div className="row">
+        <div className="col s6">Points</div>
+        <div className="col s6">
+          <span>{score1}</span>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col s6">
+          <span style={{ fontSize: 20 }}>{player2}</span>
+        </div>
+        <div className="col s3">
+          <button
+            className="btn-floating btn-large waves-effect waves-light green"
+            aria-label="Increment score 2"
+            onClick={() => dispatch(incrementScore2())}
+          >
+            <i className="large material-icons">add</i>
+          </button>
+        </div>
+        <div className="col s3">
+          <button
+            className="btn-floating btn-large waves-effect waves-light red"
+            aria-label="Decrement score 2"
+            onClick={() => dispatch(decrementScore2())}
+          >
+            <i className="large material-icons">remove</i>
+          </button>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col s6">Points</div>
+        <div className="col s6">
+          <span>{score2}</span>
+        </div>
+      </div>
+      <div className="divider" style={{ margin: "3%" }}></div>
+      <div className="row">
+        <div className="col s6">Current Winner</div>
+        <div className="col s6">
+          <span>{returnWinner(score1, score2)}</span>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col s6">Win Difference</div>
+        <div className="col s6">
+          <span>{difference}</span>
+        </div>
       </div>
     </div>
   );

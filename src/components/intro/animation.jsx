@@ -13,8 +13,8 @@ const LottieControl = () => {
   };
 
   return (
-    <div>
-      <Lottie options={defaultOptions} height={300} width={300} />
+    <div style={{ marginTop: "2%", marginBottom: "2%" }}>
+      <Lottie options={defaultOptions} height={250} width={250} />
     </div>
   );
 };

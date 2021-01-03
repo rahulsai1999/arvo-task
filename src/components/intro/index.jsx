@@ -12,7 +12,7 @@ const Intro = (props) => {
   return (
     <div className="container">
       <div className="row">
-        <div class="input-field col s12">
+        <div className="input-field col offset-s3 s6">
           <input
             id="player1"
             type="text"
@@ -26,7 +26,7 @@ const Intro = (props) => {
         </div>
       </div>
       <div className="row">
-        <div class="input-field col s12">
+        <div className="input-field col offset-s3 s6">
           <input
             id="player2"
             type="text"

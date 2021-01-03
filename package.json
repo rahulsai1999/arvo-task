@@ -2,6 +2,7 @@
   "name": "arvolution",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://rahulsai1999.github.io/arvo-task",
   "dependencies": {
     "@reduxjs/toolkit": "^1.1.0",
     "@testing-library/jest-dom": "^4.2.4",
@@ -17,7 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

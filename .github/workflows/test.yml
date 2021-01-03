@@ -1,0 +1,19 @@
+name: Test
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  test:
+    runs-on: ubuntu-16.04
+    steps:
+      - uses: actions/checkout@master
+      - name: setup
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: install-dependencies
+        run: npm ci
+      - name: run-tests
+        run: npm test

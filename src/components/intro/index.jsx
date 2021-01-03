@@ -79,29 +79,56 @@ const Intro = () => {
         <i className="material-icons right">arrow_forward</i>Continue
       </button>
 
-      <div className="divider" style={{ margin: "3%" }} />
+      <div className="divider" style={{ margin: "1%" }} />
 
       {leftOff ? (
         <>
           <div className="row">
-            <h5>{leftOff?.s1}</h5>
-            <h5>{leftOff?.s2}</h5>
-            <h5>{leftOff?.p1}</h5>
-            <h5>{leftOff?.p2}</h5>
-            <button
-              type="button"
-              className={"waves-effect waves-light btn-large"}
-              onClick={() => continueLeftoff()}
-            >
-              <i className="material-icons right">arrow_forward</i>Continue
-            </button>
-            <button
-              type="button"
-              className={"waves-effect waves-light btn-large"}
-              onClick={() => clearLeftoff()}
-            >
-              <i className="material-icons right">close</i>Clear
-            </button>
+            <div className="col offset-s3 s6">
+              <div className="card blue-grey darken-1">
+                <div className="card-content white-text">
+                  <span className="card-title">
+                    Continue where you left off
+                  </span>
+                  <br />
+                  <div className="row">
+                    <div className="col s8 push-s1">
+                      <span className="card-title">{leftOff?.p1}</span>
+                    </div>
+                    <div className="col s4 pull-s3">
+                      <span className="card-title">{leftOff?.s1}</span>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col s8 push-s1">
+                      <span className="card-title">{leftOff?.p2}</span>
+                    </div>
+                    <div className="col s4 pull-s3">
+                      <span className="card-title">{leftOff?.s2}</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="card-action">
+                  <button
+                    type="button"
+                    style={{ marginLeft: "2%", marginRight: "2%" }}
+                    className={"waves-effect waves-light btn-large"}
+                    onClick={() => continueLeftoff()}
+                  >
+                    <i className="material-icons right">arrow_forward</i>
+                    Continue
+                  </button>
+                  <button
+                    type="button"
+                    style={{ marginLeft: "2%", marginRight: "2%" }}
+                    className={"waves-effect waves-light btn-large"}
+                    onClick={() => clearLeftoff()}
+                  >
+                    <i className="material-icons right">close</i>Clear
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </>
       ) : null}

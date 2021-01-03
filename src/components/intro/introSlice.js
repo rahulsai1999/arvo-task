@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { save } from "../../app/persist";
+import { get, save } from "../../app/persist";
 
 export const introSlice = createSlice({
   name: "intro",
@@ -13,8 +13,8 @@ export const introSlice = createSlice({
       state.gameActive = true;
       save("player1", state.player1);
       save("player2", state.player2);
-      save("score1", 0);
-      save("score2", 0);
+      if (!get("score1")) save("score1", 0);
+      if (!get("score2")) save("score2", 0);
     },
     goToIntro: (state) => {
       state.gameActive = false;

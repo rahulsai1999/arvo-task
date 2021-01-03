@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/arvo-task/static/css/main.fb84e5e5.chunk.css",
+    "main.js": "/arvo-task/static/js/main.56263fcf.chunk.js",
+    "main.js.map": "/arvo-task/static/js/main.56263fcf.chunk.js.map",
+    "runtime-main.js": "/arvo-task/static/js/runtime-main.259a5fbd.js",
+    "runtime-main.js.map": "/arvo-task/static/js/runtime-main.259a5fbd.js.map",
+    "static/js/2.37075c54.chunk.js": "/arvo-task/static/js/2.37075c54.chunk.js",
+    "static/js/2.37075c54.chunk.js.map": "/arvo-task/static/js/2.37075c54.chunk.js.map",
+    "index.html": "/arvo-task/index.html",
+    "static/css/main.fb84e5e5.chunk.css.map": "/arvo-task/static/css/main.fb84e5e5.chunk.css.map",
+    "static/js/2.37075c54.chunk.js.LICENSE.txt": "/arvo-task/static/js/2.37075c54.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.259a5fbd.js",
+    "static/js/2.37075c54.chunk.js",
+    "static/css/main.fb84e5e5.chunk.css",
+    "static/js/main.56263fcf.chunk.js"
+  ]
+}

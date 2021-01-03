@@ -32,13 +32,16 @@ const Game = () => {
           <span style={{ fontSize: 25 }}>{player1}</span>
         </div>
         <div className="col s3">
-          <span style={{ fontSize: 25 }}>{score1}</span>
+          <span style={{ fontSize: 25 }} data-testid="score1">
+            {score1}
+          </span>
         </div>
         <div className="col s1">
           <button
             type="button"
             className="btn-floating waves-effect waves-light green"
             aria-label="Increment score 1"
+            data-testid="up1"
             onClick={() => dispatch(incrementScore1())}
           >
             <i className="large material-icons">add</i>
@@ -53,6 +56,7 @@ const Game = () => {
                 : "btn-floating disabled"
             }
             aria-label="Decrement score 1"
+            data-testid="down1"
             onClick={() => dispatch(decrementScore1())}
           >
             <i className="large material-icons">remove</i>
@@ -64,13 +68,16 @@ const Game = () => {
           <span style={{ fontSize: 25 }}>{player2}</span>
         </div>
         <div className="col s3">
-          <span style={{ fontSize: 25 }}>{score2}</span>
+          <span style={{ fontSize: 25 }} data-testid="score2">
+            {score2}
+          </span>
         </div>
         <div className="col s1">
           <button
             type="button"
             className="btn-floating waves-effect waves-light green"
             aria-label="Increment score 2"
+            data-testid="up2"
             onClick={() => dispatch(incrementScore2())}
           >
             <i className="large material-icons">add</i>
@@ -85,6 +92,7 @@ const Game = () => {
                 : "btn-floating disabled"
             }
             aria-label="Decrement score 2"
+            data-testid="down2"
             onClick={() => dispatch(decrementScore2())}
           >
             <i className="large material-icons">remove</i>
@@ -101,7 +109,7 @@ const Game = () => {
       <div className="row">
         <div className="col s6">Win Difference</div>
         <div className="col s6">
-          <span>{difference}</span>
+          <span data-testid="difference">{difference}</span>
         </div>
       </div>
     </div>

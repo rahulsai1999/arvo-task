@@ -40,9 +40,10 @@ const Intro = () => {
   return (
     <div className="container">
       <div className="row">
-        <div className="input-field col offset-s3 s6">
+        <div className="input-field col s10 m8 l8 xl6 push-s1 push-m2 push-l2 push-xl3">
           <input
             id="player1"
+            autoComplete={false}
             type="text"
             className="validate"
             value={player1}
@@ -54,7 +55,7 @@ const Intro = () => {
         </div>
       </div>
       <div className="row">
-        <div className="input-field col offset-s3 s6">
+        <div className="input-field col s10 m8 l8 xl6 push-s1 push-m2 push-l2 push-xl3">
           <input
             id="player2"
             type="text"
@@ -79,12 +80,12 @@ const Intro = () => {
         <i className="material-icons right">arrow_forward</i>Continue
       </button>
 
-      <div className="divider" style={{ margin: "1%" }} />
+      <div className="divider" style={{ margin: "2%" }} />
 
       {leftOff ? (
         <>
           <div className="row">
-            <div className="col offset-s3 s6">
+            <div className="col s12 m8 l8 xl6 push-m2 push-l2 push-xl3">
               <div className="card blue-grey darken-1">
                 <div className="card-content white-text">
                   <span className="card-title">
@@ -111,8 +112,8 @@ const Intro = () => {
                 <div className="card-action">
                   <button
                     type="button"
-                    style={{ marginLeft: "2%", marginRight: "2%" }}
-                    className={"waves-effect waves-light btn-large"}
+                    style={{ marginLeft: "1%", marginRight: "1%" }}
+                    className={"waves-effect waves-light btn"}
                     onClick={() => continueLeftoff()}
                   >
                     <i className="material-icons right">arrow_forward</i>
@@ -120,8 +121,8 @@ const Intro = () => {
                   </button>
                   <button
                     type="button"
-                    style={{ marginLeft: "2%", marginRight: "2%" }}
-                    className={"waves-effect waves-light btn-large"}
+                    style={{ marginLeft: "1%", marginRight: "1%" }}
+                    className={"waves-effect waves-light btn"}
                     onClick={() => clearLeftoff()}
                   >
                     <i className="material-icons right">close</i>Clear

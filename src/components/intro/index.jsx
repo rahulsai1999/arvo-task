@@ -16,6 +16,7 @@ const Intro = () => {
   const player2 = useSelector(selectPlayer2);
   const dispatch = useDispatch();
 
+  // checks localStorage for any stored data
   useEffect(() => {
     const store = getStore();
     const { p1, p2, s1, s2 } = store;
@@ -24,6 +25,7 @@ const Intro = () => {
     }
   }, []);
 
+  // resume the last played game
   const continueLeftoff = () => {
     dispatch(setPlayer1(leftOff.p1));
     dispatch(setPlayer2(leftOff.p2));
@@ -32,6 +34,7 @@ const Intro = () => {
     dispatch(goToGame());
   };
 
+  // clear the last played game
   const clearLeftoff = () => {
     setLeftOff(null);
     clearStore();

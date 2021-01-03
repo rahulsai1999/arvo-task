@@ -13,6 +13,8 @@ export const introSlice = createSlice({
       state.gameActive = true;
       save("player1", state.player1);
       save("player2", state.player2);
+      save("score1", 0);
+      save("score2", 0);
     },
     goToIntro: (state) => {
       state.gameActive = false;

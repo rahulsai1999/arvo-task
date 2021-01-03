@@ -26,17 +26,17 @@ const Game = () => {
   };
 
   return (
-    <div className="container" style={{ marginTop: "3%", padding: "3%" }}>
+    <div className="container" style={{ marginTop: "3%", padding: "2%" }}>
       <div className="row">
-        <div className="col s5">
+        <div className="col s5 xl6">
           <span style={{ fontSize: 25 }}>{player1}</span>
         </div>
-        <div className="col s3">
+        <div className="col s3 xl4 pull-xl2">
           <span style={{ fontSize: 25 }} data-testid="score1">
             {score1}
           </span>
         </div>
-        <div className="col s1">
+        <div className="col s2 xl1 pull-xl2">
           <button
             type="button"
             className="btn-floating waves-effect waves-light green"
@@ -47,7 +47,7 @@ const Game = () => {
             <i className="large material-icons">add</i>
           </button>
         </div>
-        <div className="col s1">
+        <div className="col s2 xl1 pull-xl2">
           <button
             type="button"
             className={
@@ -64,15 +64,15 @@ const Game = () => {
         </div>
       </div>
       <div className="row">
-        <div className="col s5">
+        <div className="col s5 xl6">
           <span style={{ fontSize: 25 }}>{player2}</span>
         </div>
-        <div className="col s3">
+        <div className="col s3 xl4 pull-xl2">
           <span style={{ fontSize: 25 }} data-testid="score2">
             {score2}
           </span>
         </div>
-        <div className="col s1">
+        <div className="col s2 xl1 pull-xl2">
           <button
             type="button"
             className="btn-floating waves-effect waves-light green"
@@ -83,7 +83,7 @@ const Game = () => {
             <i className="large material-icons">add</i>
           </button>
         </div>
-        <div className="col s1">
+        <div className="col s2 xl1 pull-xl2">
           <button
             type="button"
             className={
@@ -99,17 +99,23 @@ const Game = () => {
           </button>
         </div>
       </div>
-      <div className="divider" style={{ margin: "3%" }} />
+      <div className="divider" style={{ margin: "4%" }} />
       <div className="row">
-        <div className="col s6">Current Winner</div>
-        <div className="col s6">
-          <span>{returnWinner(score1, score2)}</span>
+        <div className="col s7 xl6">
+          <span style={{ fontSize: 18 }}>Current Winner</span>
+        </div>
+        <div className="col s5 xl6">
+          <span style={{ fontSize: 18 }}>{returnWinner(score1, score2)}</span>
         </div>
       </div>
       <div className="row">
-        <div className="col s6">Win Difference</div>
-        <div className="col s6">
-          <span data-testid="difference">{difference}</span>
+        <div className="col s7 xl6">
+          <span style={{ fontSize: 18 }}>Win Difference</span>
+        </div>
+        <div className="col s5 xl6">
+          <span data-testid="difference" style={{ fontSize: 18 }}>
+            {difference}
+          </span>
         </div>
       </div>
     </div>

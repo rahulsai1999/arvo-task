@@ -13,10 +13,10 @@ export const gameSlice = createSlice({
       state.score2 = 0;
     },
     setScore1: (state, action) => {
-      state.score1 = Number.parseInt(action.payload);
+      state.score1 = Number.parseInt(action.payload, 10);
     },
     setScore2: (state, action) => {
-      state.score2 = Number.parseInt(action.payload);
+      state.score2 = Number.parseInt(action.payload, 10);
     },
     incrementScore1: (state) => {
       state.score1 += 1;
@@ -49,7 +49,9 @@ export const {
 
 export const selectScore1 = (state) => state.game.score1;
 export const selectScore2 = (state) => state.game.score2;
-export const selectDifference = (state) =>
-  Math.abs(state.game.score1 - state.game.score2);
+export const selectDifference = (state) => {
+  const difference = state.game.score1 - state.game.score2;
+  return Math.abs(difference);
+};
 
 export default gameSlice.reducer;

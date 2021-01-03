@@ -1,25 +1,27 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-
+import { useDispatch, useSelector } from "react-redux";
 import { selectPlayer1, selectPlayer2 } from "../intro/introSlice";
-import { incrementScore1, incrementScore2 } from "./gameSlice";
-import { decrementScore1, decrementScore2 } from "./gameSlice";
-import { selectScore1, selectScore2 } from "./gameSlice";
-import { selectDifference } from "./gameSlice";
-// import { resetScores } from "./gameSlice";
+import {
+  decrementScore1,
+  decrementScore2,
+  incrementScore1,
+  incrementScore2,
+  selectDifference,
+  selectScore1,
+  selectScore2,
+} from "./gameSlice";
 
-const Game = (props) => {
+const Game = () => {
   const score1 = useSelector(selectScore1);
   const score2 = useSelector(selectScore2);
   const player1 = useSelector(selectPlayer1);
   const player2 = useSelector(selectPlayer2);
   const difference = useSelector(selectDifference);
-
   const dispatch = useDispatch();
 
-  const returnWinner = (score1, score2) => {
-    if (score1 > score2) return player1;
-    else if (score2 > score1) return player2;
+  const returnWinner = (s1, s2) => {
+    if (s1 > s2) return player1;
+    else if (s2 > s1) return player2;
     else return "Tied";
   };
 
@@ -34,6 +36,7 @@ const Game = (props) => {
         </div>
         <div className="col s1">
           <button
+            type="button"
             className="btn-floating waves-effect waves-light green"
             aria-label="Increment score 1"
             onClick={() => dispatch(incrementScore1())}
@@ -43,6 +46,7 @@ const Game = (props) => {
         </div>
         <div className="col s1">
           <button
+            type="button"
             className={
               score1 !== 0
                 ? "btn-floating waves-effect waves-light red"
@@ -64,6 +68,7 @@ const Game = (props) => {
         </div>
         <div className="col s1">
           <button
+            type="button"
             className="btn-floating waves-effect waves-light green"
             aria-label="Increment score 2"
             onClick={() => dispatch(incrementScore2())}
@@ -73,6 +78,7 @@ const Game = (props) => {
         </div>
         <div className="col s1">
           <button
+            type="button"
             className={
               score2 !== 0
                 ? "btn-floating waves-effect waves-light red"
@@ -85,7 +91,7 @@ const Game = (props) => {
           </button>
         </div>
       </div>
-      <div className="divider" style={{ margin: "3%" }}></div>
+      <div className="divider" style={{ margin: "3%" }} />
       <div className="row">
         <div className="col s6">Current Winner</div>
         <div className="col s6">

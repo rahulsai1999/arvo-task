@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-
-import { getStore, clearStore } from "../../app/persist";
-import { setPlayer1, setPlayer2, goToGame } from "./introSlice";
-import { selectPlayer1, selectPlayer2 } from "./introSlice";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { clearStore, getStore } from "../../app/persist";
 import { setScore1, setScore2 } from "../game/gameSlice";
+import {
+  goToGame,
+  selectPlayer1,
+  selectPlayer2,
+  setPlayer1,
+  setPlayer2,
+} from "./introSlice";
 
-const Intro = (props) => {
+const Intro = () => {
   const [leftOff, setLeftOff] = useState(null);
   const player1 = useSelector(selectPlayer1);
   const player2 = useSelector(selectPlayer2);
@@ -14,7 +18,6 @@ const Intro = (props) => {
 
   useEffect(() => {
     const store = getStore();
-    console.log(store);
     const { p1, p2, s1, s2 } = store;
     if (p1 && p2 && s1 && s2) {
       setLeftOff(store);
@@ -47,7 +50,7 @@ const Intro = (props) => {
               dispatch(setPlayer1(e.target.value));
             }}
           />
-          <label for="player1">Player 1</label>
+          <label htmlFor="player1">Player 1</label>
         </div>
       </div>
       <div className="row">
@@ -61,10 +64,11 @@ const Intro = (props) => {
               dispatch(setPlayer2(e.target.value));
             }}
           />
-          <label for="player2">Player 2</label>
+          <label htmlFor="player2">Player 2</label>
         </div>
       </div>
       <button
+        type="button"
         className={
           player1.length !== 0 && player2.length !== 0
             ? "waves-effect waves-light btn-large"
@@ -72,10 +76,10 @@ const Intro = (props) => {
         }
         onClick={() => dispatch(goToGame())}
       >
-        <i class="material-icons right">arrow_forward</i>Continue
+        <i className="material-icons right">arrow_forward</i>Continue
       </button>
 
-      <div className="divider" style={{ margin: "3%" }}></div>
+      <div className="divider" style={{ margin: "3%" }} />
 
       {leftOff ? (
         <>
@@ -85,16 +89,18 @@ const Intro = (props) => {
             <h5>{leftOff?.p1}</h5>
             <h5>{leftOff?.p2}</h5>
             <button
+              type="button"
               className={"waves-effect waves-light btn-large"}
               onClick={() => continueLeftoff()}
             >
-              <i class="material-icons right">arrow_forward</i>Continue
+              <i className="material-icons right">arrow_forward</i>Continue
             </button>
             <button
+              type="button"
               className={"waves-effect waves-light btn-large"}
               onClick={() => clearLeftoff()}
             >
-              <i class="material-icons right">close</i>Clear
+              <i className="material-icons right">close</i>Clear
             </button>
           </div>
         </>

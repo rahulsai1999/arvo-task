@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { save } from "../../app/persist";
 
 export const gameSlice = createSlice({
   name: "game",
@@ -11,23 +12,27 @@ export const gameSlice = createSlice({
       state.score1 = 0;
       state.score2 = 0;
     },
-    setScore1: (state, dispatch) => {
-      state.score1 = dispatch.payload;
+    setScore1: (state, action) => {
+      state.score1 = Number.parseInt(action.payload);
     },
-    setScore2: (state, dispatch) => {
-      state.score2 = dispatch.payload;
+    setScore2: (state, action) => {
+      state.score2 = Number.parseInt(action.payload);
     },
     incrementScore1: (state) => {
       state.score1 += 1;
+      save("score1", state.score1);
     },
     incrementScore2: (state) => {
       state.score2 += 1;
+      save("score2", state.score2);
     },
     decrementScore1: (state) => {
       state.score1 -= 1;
+      save("score1", state.score1);
     },
     decrementScore2: (state) => {
       state.score2 -= 1;
+      save("score2", state.score2);
     },
   },
 });

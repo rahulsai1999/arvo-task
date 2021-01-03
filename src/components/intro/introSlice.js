@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { save } from "../../app/persist";
 
 export const introSlice = createSlice({
   name: "intro",
@@ -10,6 +11,8 @@ export const introSlice = createSlice({
   reducers: {
     goToGame: (state) => {
       state.gameActive = true;
+      save("player1", state.player1);
+      save("player2", state.player2);
     },
     goToIntro: (state) => {
       state.gameActive = false;
@@ -18,11 +21,11 @@ export const introSlice = createSlice({
       state.player1 = "";
       state.player2 = "";
     },
-    setPlayer1: (state, dispatch) => {
-      state.player1 = dispatch.payload;
+    setPlayer1: (state, action) => {
+      state.player1 = action.payload;
     },
-    setPlayer2: (state, dispatch) => {
-      state.player2 = dispatch.payload;
+    setPlayer2: (state, action) => {
+      state.player2 = action.payload;
     },
   },
 });

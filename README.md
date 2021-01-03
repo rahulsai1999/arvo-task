@@ -1,5 +1,8 @@
 # Arvolution Coding Task
 
+![Test](https://github.com/rahulsai1999/arvo-task/workflows/Test/badge.svg)
+![GH-Pages deployment](https://github.com/rahulsai1999/arvo-task/workflows/GH-Pages%20deployment/badge.svg)
+
 ## Features
 
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.

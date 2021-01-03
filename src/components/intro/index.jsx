@@ -21,7 +21,7 @@ const Intro = (props) => {
     }
   }, []);
 
-  const leftOffContinue = () => {
+  const continueLeftoff = () => {
     dispatch(setPlayer1(leftOff.p1));
     dispatch(setPlayer2(leftOff.p2));
     dispatch(setScore1(leftOff.s1));
@@ -86,7 +86,7 @@ const Intro = (props) => {
             <h5>{leftOff?.p2}</h5>
             <button
               className={"waves-effect waves-light btn-large"}
-              onClick={() => leftOffContinue()}
+              onClick={() => continueLeftoff()}
             >
               <i class="material-icons right">arrow_forward</i>Continue
             </button>
